@@ -1,0 +1,51 @@
+# Copy this file to config.yaml and substitute your own values
+database:
+  # This probably should not change
+  driver: pdo_pgsql
+  # The database host to connect to
+  host: localhost
+  # The name of the database to connect to
+  dbname: printapp
+  # The username to connect to the database with
+  # keep this in sync with the salt script
+  user: printapp
+  # The password to connect to the database with
+  # Keep this in sync with the salt script
+  password: LWuSQ0MM
+
+cups:
+  # The host with the cups server
+  host: localhost
+  # A fake printer that just holds jobs
+  # See cups server documentation for more info
+  catchall_printer: /printers/Catchall
+
+# Currently only active directory is supported
+# active_directory must be set to true
+ldap:
+  # This key should be the domain name (Pre-Windows 2000 style)
+  MYDOMAIN:
+    # This is a list of LDAP servers. Current the app does not
+    # query DNS to try to discover them
+    hosts:
+      # List the hosts 1 per line
+      - 192.168.1.1
+      - 192.168.2.2
+    secure: true
+    # This is the Domain DN (new style)
+    dn: MYDOMAIN.NET
+    # Base of the tree to start querying for users
+    base_ou: OU=Users,DC=mydomain,DC=net
+    # True if active directory. Must be true for now.
+    active_directory: true
+  # You can specify multiple Domains if you'd like. The first one
+  # is considered to be the "Default" if no others match
+  MYOTHERDOMAIN:
+    hosts:
+      - 10.10.1.1
+      - 10.10.2.2
+    secure: true
+    dn: MYOTHERDOMAIN.LOCAL
+    base_ou: OU=Users,DC=sms1,DC=local
+    active_directory: true
+

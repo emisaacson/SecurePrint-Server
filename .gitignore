@@ -1,0 +1,6 @@
+composer.lock
+vendor
+components
+config.yaml
+config.debug.yaml
+config.prod.yaml

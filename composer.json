@@ -1,0 +1,21 @@
+
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "twbs/bootstrap": "3.2.0",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "symfony/form": "~2.3",
+        "symfony/validator": "~2.3",
+        "symfony/config": "~2.3",
+        "symfony/translation": "~2.3",
+        "symfony/security-csrf": "~2.4",
+        "symfony/twig-bridge": "~2.3",
+        "symfony/yaml": "2.5.5",
+        "deralex/yaml-config-service-provider": "1.0.0",
+        "doctrine/dbal": "2.2.*",
+        "components/jquery": "1.11.1"
+    },
+    "autoload": {
+        "psr-4": {"PrintApp\\": "web/"}
+    }
+}
